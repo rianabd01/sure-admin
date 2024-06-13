@@ -14,7 +14,7 @@ import TrashList from './Components/TrashList';
 import ProofList from './Components/ProofList';
 
 axios.defaults.baseURL =
-  'http://ec2-18-142-51-153.ap-southeast-1.compute.amazonaws.com';
+  'https://ec2-18-142-51-153.ap-southeast-1.compute.amazonaws.com';
 
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem('token') || '');
