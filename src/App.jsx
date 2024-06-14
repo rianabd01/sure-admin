@@ -47,8 +47,8 @@ export default function App() {
               path="/sure-admin"
               element={<Navigate to="/sure-admin/list" />}
             />
-            <Route path="/sure-admin/list" element={<TrashList />} />
-            <Route path="/sure-admin/proof" element={<ProofList />} />
+            <Route path="/list" element={<TrashList />} />
+            <Route path="/proof" element={<ProofList />} />
           </>
         )}
       </Routes>
