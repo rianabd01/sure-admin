@@ -32,7 +32,7 @@ export default function App() {
   };
 
   return (
-    <Router basename="/sure-admin">
+    <Router>
       <Header token={token} logout={logout} />
 
       <Routes>
