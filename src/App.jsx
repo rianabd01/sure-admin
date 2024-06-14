@@ -28,27 +28,21 @@ export default function App() {
     localStorage.removeItem('token');
     setToken('');
     delete axios.defaults.headers.common['Authorization'];
-    navigate('/sure-admin/');
+    navigate('/');
   };
 
   return (
-    <Router>
+    <Router basename="/sure-admin">
       <Header token={token} logout={logout} />
 
       <Routes>
         {!token ? (
-          <Route
-            path="/sure-admin/"
-            element={<LoginForm saveToken={saveToken} />}
-          />
+          <Route path="/" element={<LoginForm saveToken={saveToken} />} />
         ) : (
           <>
-            <Route
-              path="/sure-admin"
-              element={<Navigate to="/sure-admin/list" />}
-            />
-            <Route path="/sure-admin/list" element={<TrashList />} />
-            <Route path="/sure-admin/proof" element={<ProofList />} />
+            <Route path="/" element={<Navigate to="/list" />} />
+            <Route path="/list" element={<TrashList />} />
+            <Route path="/proof" element={<ProofList />} />
           </>
         )}
       </Routes>
